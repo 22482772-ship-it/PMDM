@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <action
+        android:id="@+id/action_global_favoritosFragment"
+        app:destination="@id/favoritosFragment"
+        app:launchSingleTop="true" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.pmdm_eva3.ui.fragment.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_loginFragment_to_MainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.pmdm_eva3.ui.fragment.MainFragment"
+        android:label="Ligas"
+        tools:layout="@layout/main_fragment">
+        <action
+            android:id="@+id/action_mainFragment_to_ligaFragment"
+            app:destination="@id/ligaFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ligaFragment"
+        android:name="com.example.pmdm_eva3.ui.fragment.LigaFragment"
+        android:label="Equipos"
+        tools:layout="@layout/liga_fragment">
+        <argument
+            android:name="leagueId"
+            app:argType="string"
+            android:defaultValue="" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoritosFragment"
+        android:name="com.example.pmdm_eva3.ui.fragment.FavoritosFragment"
+        android:label="Favoritos"
+        tools:layout="@layout/favoritos_fragment" />
+
+</navigation>
